@@ -8,20 +8,15 @@ class Formatter {
   }
 
   static titleize(str) {
-    const titleExceptionWords = ['a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from', 'the']
+    const exceptions = ['a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from', 'the']
 
-    // str = str.split(' ')
-    //
-    // for (const i in str) {
     return str.split(' ').map((word, i) => {
-      if (i === 0 || !titleExceptionWords.includes(word)) {
+      if (i === 0 || !exceptions.includes(word)) {
         return word = Formatter.capitalize(word)
       } else {
         return word
       }
     }).join(' ')
-    // }
-    // return str.join(' ')
   }
 }
 
