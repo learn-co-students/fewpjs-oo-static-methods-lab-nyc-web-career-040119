@@ -10,14 +10,18 @@ class Formatter {
   static titleize(str) {
     const titleExceptionWords = ['a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from', 'the']
 
-    str = str.split(' ')
-
-    for (const i in str) {
-      if (i === "0" || !titleExceptionWords.includes(str[i])) {
-        str[i] = Formatter.capitalize(str[i])
+    // str = str.split(' ')
+    //
+    // for (const i in str) {
+    return str.split(' ').map((word, i) => {
+      if (i === 0 || !titleExceptionWords.includes(word)) {
+        return word = Formatter.capitalize(word)
+      } else {
+        return word
       }
-    }
-    return str.join(' ')
+    }).join(' ')
+    // }
+    // return str.join(' ')
   }
 }
 
